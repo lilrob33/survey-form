@@ -1,0 +1,261 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Job happines suervey form</title>
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        header {
+            color: black;
+            text-align: center;
+            padding: 0 0.625rem;
+            margin-bottom: 1.875rem;
+        }
+        body {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.4;
+            margin:auto;
+            max-width: 500px;
+            color: white;
+            text-align: center;
+        }
+
+        img {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            min-height: 100%;
+            min-width: 100%;
+            z-index: -1;
+            background: darkblue;
+            background-image: linear-gradient(115deg, rgba(50, 50, 158, 0.8) rgba(136, 136, 206, 0.7) );
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-color: #464646;
+        }
+
+            h1 {
+                font-weight: 400;
+                line-height: 1.2;
+            }
+
+            p {
+                font-size: 1.125rem;
+            }
+
+            h1, p {
+                margin-top: 0;
+                margin-bottom: 0.5rem;
+            }
+
+            label {
+                display: flex;
+                align-items: center;
+                font-size: 1.125rem;
+                margin-bottom: 0.5rem;
+            }
+
+            input, button, select, textarea {
+                margin: 0;
+                font-family: inherit;
+                font-size: inherit;
+                line-height: inherit;
+            }
+
+            button {
+                border: none;
+            }
+
+            container {
+                width: 100%;
+                margin: 3.125rem auto 0 auto;
+            }
+
+            @media (max-width: 400px) {
+                .container {
+                    max-width: 500px;
+                }
+            }
+
+            .decription {
+                font-style: italic;
+                font-weight: 200;
+                text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+            }
+
+            .clue {
+                margin-left: 0.25rem;
+                font-size: 0.9rem;
+                color: #e4e4e4;
+            }
+
+            .text-center {
+                text-align: center;
+            }
+
+        form {
+            background-color: rgba(23,67,88,0.65);
+            padding: 10px;
+            border-radius: 0.25rem;
+        }
+
+        @media (min-width: 400px) {
+            .form {
+                padding: 2.5rem;
+            }
+        }
+
+        .form-group {
+            margin: 0 auto 1.25rem auto;
+            padding: 0.25rem;
+        }
+
+        .form-control {
+            display: block;
+            width: 100%;
+            height: 2.375rem;
+            padding: 0.375rem 0.75rem;
+            color: #495057;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #ced4da;
+            border-radius: 0.25rem;
+            transition: 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
+
+        .form-control:focus {
+            border-color: #80bdff;
+            outline: 0;
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+        }
+
+        .input-radio, .input-checkbox {
+            display: inline-block;
+            margin-right: 0.625rem;
+            min-height: 1.25rem;
+            min-width: 1.25rem;
+        }
+
+        .input-textarea {
+            min-height: 120px;
+            width: 100%;
+            padding: 0.625rem;
+            resize: vertical;
+        }
+
+        .submit-button {
+            display: block;
+            width: 100%;
+            padding: 0.75rem;
+            background: #582C17;
+            color: inherit;
+            border-radius: 2px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        window.console = window.console || function (t) { };
+    </script>
+    <script>
+        if (document.location.search.match(/type=embed/gi)) {
+            window.parent.postMessage('resize', "*");
+        }
+    </script>
+</head>
+<body translate="no">
+    <img src="./assets/worker.jpeg" class="img" />
+    <div class="container">
+        <header class="header">
+            <h1 id="title" class="test-center">
+                Job happiness survey form
+            </h1>
+            <p id="description" class="decription_text_center">How happy are you in your current roll and what would you like to be doing?</p>
+        </header>
+        <form id="survey-form">
+            <div class="form-group">
+                <label id="name-label" for="name">Name</label>
+                <input type="text" name="name" class="form-control" placeholder="Enter your name" required />
+            </div>
+            <div class="form-group">
+                <label id="email-label" for="email">Email</label>
+                <input type="email" name="email" class="form-control" placeholder="Enter your Email" required />
+            </div>
+            <div class="form-group">
+                <label id="number-label" for="number">Age
+                <span class="clue">(optional)</span></label>
+                <input type="number" name="age" id="number" min="10" max="99" class="form-control" placeholder="Age" />
+            </div>
+            <div class="form-group">
+                <p>Which best describes your current role?</p>
+                <select id="dropdown" name="role" class="form-control" required>
+                    <option value="" disabled selected hidden>Select current role</option>
+                    <option value="student">Student</option>
+                    <option value="health-care">Health care</option>
+                    <option value="laborer">Laborer</option>
+                    <option value="manufacturing">Manufacturing</option>
+                    <option value="retail">Retail</option>
+                    <option value="it">Information Technology</option>
+                    <option value="bussines-admin">Bussines/Admin</option>
+                    <option value="hr">Human resources</option>
+                    <option value="ag">Agriculture/Food</option>
+                    <option value="food-service">Food service</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <p>How happy are you in your current position?</p>
+                <label>
+                    <input name="happiness" value="very" type="radio" class="input-radio" checked />Very happy
+                </label>
+                <label>
+                    <input name="happiness" value="could-be-better" type="radio" class="input-radio" />It could be better
+                </label>
+                <label>
+                    <input name="happiness" value="meh" type="radio" class="input-radio" />Meh
+                </label>
+                <label>
+                    <input name="happiness" value="not" type="radio" class="input-radio" />Are you serious?! This job sucks!!
+                </label>
+            </div>
+            <div class="form-group">
+                <p>
+                    What would make it better for you now? <span class="clue">(Check all that apply</span>
+                </p>
+                <label>
+                <input name="prefer" value="management" type="checkbox" class="input-checkbox">Better managment</label>
+                <label>
+                <input name="prefer" value="raise" type="checkbox" class="input-checkbox">Raise</label>
+                <label>
+                <input name="prefer" value="benefits" type="checkbox" class="input-checkbox">Better benefits/benefits</label>
+                <label>
+                <input name="prefer" value="progression" type="checkbox" class="input-checkbox">Career progression</label>
+                <label>
+                <input name="prefer" value="responsibility" type="checkbox" class="input-checkbox">More responsibility</label>
+                <label>
+                <input value="training" type="checkbox" class="input-checkbox">Cross training</label>
+                <label>
+                <input name="prefer" value="job" type="checkbox" class="input-checkbox">A new job</label>
+                <label>
+                <input name="prefer" value="nothing" type="checkbox" class="input-checkbox">This job just sucks!</label>
+            </div>
+            <div class="form-group">
+                <p>What would you like to do for your career?</p>
+                <textarea id="future-job" class="input-textarea" name="career" placeholder="What would you like to be doing"></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit" id="submit" class="submit-button">Submit</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
